@@ -69,7 +69,6 @@ async function crawlPage(baseURL, currentURL, pages) {
     const htmlBody = await response.text()
 
     const nextURLs = getURLsFromHTML(htmlBody, baseURL)
-    console.log(nextURLs)
     for (const nextURL of nextURLs) {
         pages = await crawlPage(baseURL, nextURL, pages)
     }
